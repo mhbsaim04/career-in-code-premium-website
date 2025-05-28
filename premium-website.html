@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Assets/logo.png">
+    <title>Career in Coding | M.H.B. Saim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+            --gradient-accent: linear-gradient(135deg, #f72585 0%, #b5179e 100%);
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 30px rgba(0,0,0,0.2);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .button {
+            background: var(--gradient);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .button-accent {
+            background: var(--gradient-accent);
+        }
+
+        section {
+            padding: 80px 5%;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .intro {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .intro img {
+            width: 150px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 5px 15px rgba(67, 97, 238, 0.3));
+        }
+
+        .intro h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .why-web-dev {
+            position: relative;
+        }
+
+        .why-web-dev::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Assets/dots-bg.png') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .web-dev-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .web-dev-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .web-dev-card img {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .why-card-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .why-card-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .inspiration {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .inspiration h2 {
+            color: white;
+            background: none;
+        }
+
+        .inspiration p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .targets {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover::after {
+            height: 10px;
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .card a:hover {
+            color: var(--accent);
+        }
+        
+        .site-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--dark);
+            color: white;
+            padding: 30px 5%;
+            margin-top: 80px;
+        }
+
+        .site-footer p {
+            margin: 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        .footer-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-icons a {
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-icons a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .intro h1 {
+                font-size: 1.8rem;
+            }
+            
+            .web-dev-card {
+                padding: 30px;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        /* Particles background for hero section */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="logo">
+            <i class="fas fa-code"></i> Career<span>.dev</span>
+        </div>
+        <a href="https://drive.google.com/file/d/1e7BrtE3yz1W7TsPzmwa1K5QCcr8A3L0E/view?usp=sharing" class="button" download>
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+    </div>
+
+    <section class="intro">
+        <img src="Assets/hero-developer.png" alt="Developer Icon" class="floating">
+        <h1>"Coding My Future in 2025"</h1>
+        <p>I'm on a journey to master web development, building innovative solutions that bridge technology and environmental science. Through dedicated learning and practical projects, I'm shaping myself into a developer who can make a real impact.</p>
+        <a href="https://www.linkedin.com/in/mazharul-hoq-bhuiyan-saim-32b420355/" class="button button-accent">
+            <i class="fas fa-paper-plane"></i> Let's Connect
+        </a>
+    </section>
+
+    <section class="why-web-dev">
+        <h2>Why Web Development?</h2>
+        <p>In our digital era, web development is the backbone of innovation. It's not just about creating websites—it's about crafting digital experiences that connect, inform, and transform how we interact with the world around us.</p>
+
+        <div class="web-dev-card">
+            <img src="Assets/working-developer.png" alt="Coding Illustration" class="floating">
+            <div class="why-card-content">
+                <p>My journey in web development is deeply connected to my academic background in Geography and Environment at Pabna University of Science and Technology. I envision using coding skills to revolutionize Geographic Information Systems (GIS) and Remote Sensing applications.</p>
+                <p>By combining environmental science with cutting-edge web technologies, I aim to develop solutions that address real-world ecological challenges, from climate monitoring to sustainable resource management.</p>
+                <a href="https://community.esri.com/t5/education-blog/gis-coding-skills-and-strategies-for-university/ba-p/882989" class="button">
+                    <i class="fas fa-comments"></i> Let's Discuss
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="inspiration">
+        <h2>My Inspiration</h2>
+        <p>The transformative power of coding was revealed to me through thought leaders like Omar Al Zabir and the Programming Hero community. This video crystallized my vision for what's possible with technology.</p>
+
+        <div class="video-container">
+            <iframe width="700" height="450" 
+                src="https://www.youtube.com/embed/Fowv2UMF2_s?si=x4mHJjfCFGhlNhny" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+    
+    <section>
+        <h2>My Development Roadmap</h2>
+        <p>Building expertise step by step to create a strong foundation for my tech career</p>
+
+        <div class="targets">
+            <div class="card">
+                <img src="Assets/html-icon.png" alt="html-icon">
+                <h3>HTML5</h3>
+                <p>Mastering semantic structure and accessibility</p>
+                <a href="https://learn.programming-hero.com/best-web-development-course-in-bangladesh/">
+                    <i class="fas fa-arrow-right"></i> Explore
+                </a>
+            </div>
+            <div class="card">
+                <img src="Assets/css-icon.png" alt="css-icon">
+                <h3>CSS3</h3>
+                <p>Creating beautiful, responsive interfaces</p>
+                <a href="https://learn.programming-hero.com/best-web-development-course-in-bangladesh/">
+                    <i class="fas fa-arrow-right"></i> Explore
+                </a>
+            </div>
+            <div class="card">
+                <img src="Assets/tailwind-icon.png" alt="tailwind-icon">
+                <h3>Tailwind</h3>
+                <p>Utility-first CSS for rapid development</p>
+                <a href="https://learn.programming-hero.com/best-web-development-course-in-bangladesh/">
+                    <i class="fas fa-arrow-right"></i> Explore
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <strong><p>© 2024 M.H.B. Saim - Coding My Future</p></strong>                                              
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/mhb.saim.27">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/mhbsaim04">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mazharul-hoq-bhuiyan-saim-32b420355/">
+                <i class="fab fa-linkedin-in"></i>
+            </a> 
+            <a href="mailto:mhbsaim27@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </footer>  
+
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach((card, index) => {
+                // Add delay to each card animation
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
